@@ -1,0 +1,6 @@
+framework module RCEVoiceRoomLib {
+  umbrella header "RCEVoiceRoomLib.h"
+
+  export *
+  module * { export * }
+}
