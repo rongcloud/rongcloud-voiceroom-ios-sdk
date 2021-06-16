@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 
     s.vendored_frameworks = 'RCEVoiceRoomLib.framework'
 
-    s.dependency 'RongCloudRTC/RongRTCLib', '5.1.2.1'
+    s.dependency 'RongCloudRTC/RongRTCLib', '5.1.2'
     s.dependency 'RongCloudIM/IMKit', '5.1.2.1'
 
 end
