@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
     s.name         = "RCVoiceRoomLib"
-    s.version      = "0.0.4"
+    s.version      = "0.0.5"
     s.summary      = "Rong Cloud Voice Room Lib."
 
 
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
     }
     s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
-    s.vendored_frameworks = 'RCVoiceRoomLib.framework'
+    s.vendored_frameworks = 'RCVoiceRoomLib.xcframework'
 
     s.dependency 'RongCloudRTC/RongRTCLib', '5.1.2'
     s.dependency 'RongCloudIM/IMLib', '5.1.2.1'
