@@ -7,11 +7,10 @@
 
 #import <Foundation/Foundation.h>
 #import <RongRTCLib/RongRTCLib.h>
+#import "RCVoiceRoomInfo.h"
+#import "RCVoiceRoomDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-@class RCVoiceRoomInfo;
-@protocol RCVoiceRoomDelegate;
 
 typedef void(^RCVoiceRoomSuccessBlock)(void);
 typedef void(^RCVoiceRoomErrorBlock)(NSInteger code, NSString *msg);
@@ -29,6 +28,8 @@ typedef void(^RCVoiceRoomErrorBlock)(NSInteger code, NSString *msg);
 /// @param delegate RCMicMessageHandleDelegate
 - (void)addMessageReceiveDelegate:(id<RCIMClientReceiveMessageDelegate>)delegate;
 
+/// 删除某个消息监听Delegate
+/// @param delegate RCMicMessageHandleDelegate
 - (void)removeMessageReceiveDelegate:(id<RCIMClientReceiveMessageDelegate>)delegate;
 
 /// 初始化AppKey, 如果已初始化RCCoreClient可以不掉用此方法
@@ -43,6 +44,7 @@ typedef void(^RCVoiceRoomErrorBlock)(NSInteger code, NSString *msg);
                  success:(RCVoiceRoomSuccessBlock)successBlock
                    error:(RCVoiceRoomErrorBlock)errorBlock;
 
+/// 断开连接
 - (void)disconnect;
 
 /// 用户根据roomId加入一个语聊房

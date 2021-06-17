@@ -7,11 +7,13 @@
 
 #import <Foundation/Foundation.h>
 #import "RCVoiceRoomInfo.h"
+#import "RCVoiceSeatInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol RCVoiceRoomDelegate <NSObject>
 
+/// 房间的信息和麦位信息初始化完成回调，用户可在此执行关于房间的其他初始化操作
 - (void)roomKVDidReady;
 
 /// 房间信息变更回调
@@ -64,6 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param message 收到的消息
 - (void)messageDidReceived:(RCMessage *)message;
 
+/// 收到房间的广播信息
 - (void)roomNotificationDidReceived:(NSString *)name content:(NSString *)content;
 
 /// 收到自己被抱上麦的请求
@@ -101,6 +104,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param invitationId 邀请Id
 - (void)invitationDidCancelled:(NSString *)invitationId;
 
+
+/// 用户被踢出房间的回调
+/// @param targetId 被踢出房间的用户id
+/// @param userId 执行踢某人出房间的用户id
 - (void)userDidReceiveKickoutRoom:(NSString *)targetId byUserId:(NSString *)userId;
 
 @end
