@@ -8,10 +8,12 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
+/// 麦位状态是互斥的
 typedef NS_ENUM(NSUInteger, RCSeatStatus) {
     RCSeatStatusEmpty = 0,
-    RCSeatStatusUsed = 1,
-    RCSeatStatusLock = 2,
+    RCSeatStatusUsing = 1,
+    RCSeatStatusLocking = 2,
 };
 
 @interface RCVoiceSeatInfo : NSObject<NSCopying>

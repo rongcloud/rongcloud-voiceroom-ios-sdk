@@ -7,14 +7,16 @@
 
 #import <Foundation/Foundation.h>
 #import <RongRTCLib/RongRTCLib.h>
+#import "RCVoiceRoomErrorCode.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class RCVoiceRoomInfo;
-@protocol RCVoiceRoomDelegate;
+@protocol RCVoiceRoomDelegate, RCIMClientReceiveMessageDelegate;
+
 
 typedef void(^RCVoiceRoomSuccessBlock)(void);
-typedef void(^RCVoiceRoomErrorBlock)(NSInteger code, NSString *msg);
+typedef void(^RCVoiceRoomErrorBlock)(RCVoiceRoomErrorCode code, NSString *msg);
 
 @interface RCVoiceRoomEngine : NSObject
 
@@ -33,7 +35,7 @@ typedef void(^RCVoiceRoomErrorBlock)(NSInteger code, NSString *msg);
 /// @param delegate RCMicMessageHandleDelegate
 - (void)removeMessageReceiveDelegate:(id<RCIMClientReceiveMessageDelegate>)delegate;
 
-/// 初始化AppKey, 如果已初始化RCCoreClient可以不掉用此方法
+/// 初始化AppKey, 如果已初始化RCCoreClient可以不调用此方法
 /// @param appKey 在融云系统中申请的key
 - (void)initWithAppkey:(NSString *)appKey;
 
@@ -60,7 +62,7 @@ typedef void(^RCVoiceRoomErrorBlock)(NSInteger code, NSString *msg);
 /// @param successBlock 离开房间成功
 /// @param errorBlock 离开房间失败
 - (void)leaveRoom:(RCVoiceRoomSuccessBlock)successBlock
-                   error:(RCVoiceRoomErrorBlock)errorBlock;
+                    error:(RCVoiceRoomErrorBlock)errorBlock;
 
 /// 用户主动上麦
 /// @param seatIndex 麦位序号
@@ -71,11 +73,9 @@ typedef void(^RCVoiceRoomErrorBlock)(NSInteger code, NSString *msg);
                      error:(RCVoiceRoomErrorBlock)errorBlock;
 
 /// 用户主动下麦
-/// @param seatIndex 麦位序号
 /// @param successBlock 下麦成功
 /// @param errorBlock 下麦失败
-- (void)leaveSeat:(NSUInteger)seatIndex
-                   success:(RCVoiceRoomSuccessBlock)successBlock
+- (void)leaveSeatWithSuccess:(RCVoiceRoomSuccessBlock)successBlock
                      error:(RCVoiceRoomErrorBlock)errorBlock;
 
 /// 用户跳麦，在用户已经在麦位想切换麦位时调用
@@ -90,7 +90,7 @@ typedef void(^RCVoiceRoomErrorBlock)(NSInteger code, NSString *msg);
 /// @param userId 用户id
 /// @param successBlock 抱麦成功
 /// @param errorBlock 抱麦失败
-- (void)pickSeat:(NSString *)userId
+- (void)pickUserToSeat:(NSString *)userId
                    success:(RCVoiceRoomSuccessBlock)successBlock
                      error:(RCVoiceRoomErrorBlock)errorBlock;
 
@@ -98,7 +98,7 @@ typedef void(^RCVoiceRoomErrorBlock)(NSInteger code, NSString *msg);
 /// @param userId 下麦的用户id
 /// @param successBlock 下麦成功
 /// @param errorBlock 下麦失败
-- (void)kickSeat:(NSString *)userId
+- (void)kickUserFromSeat:(NSString *)userId
          success:(RCVoiceRoomSuccessBlock)successBlock
            error:(RCVoiceRoomErrorBlock)errorBlock;
 
@@ -106,7 +106,7 @@ typedef void(^RCVoiceRoomErrorBlock)(NSInteger code, NSString *msg);
 /// @param userId 踢出房间的userId
 /// @param successBlock 成功回调
 /// @param errorBlock 失败回调
-- (void)kickOutRoom:(NSString *)userId
+- (void)kickUserFromRoom:(NSString *)userId
                       success:(RCVoiceRoomSuccessBlock)successBlock
                         error:(RCVoiceRoomErrorBlock)errorBlock;
 
@@ -193,6 +193,13 @@ typedef void(^RCVoiceRoomErrorBlock)(NSInteger code, NSString *msg);
                               error:(RCVoiceRoomErrorBlock)errorBlock;
 
 
+/// 拒绝用户排麦请求
+/// @param userId 请求排麦的用户id
+/// @param successBlock 拒绝请求成功
+/// @param errorBlock  拒绝请求失败
+- (void)rejectRequestSeat:(NSString *)userId
+                            success:(RCVoiceRoomSuccessBlock)successBlock
+                              error:(RCVoiceRoomErrorBlock)errorBlock;
 
 /// 获取当前排麦的用户列表
 /// @param successBlock 成功获取回调
@@ -227,7 +234,8 @@ typedef void(^RCVoiceRoomErrorBlock)(NSInteger code, NSString *msg);
 /// 通知房间所有用户执行某个刷新操作
 /// @param name 刷新操作的名称
 /// @param content 刷新操作的内容
-- (void)notifyVoiceRoom:(NSString *)name content:(NSString *)content;
+- (void)notifyVoiceRoom:(NSString *)name
+                content:(NSString *)content;
 
 @end
 
