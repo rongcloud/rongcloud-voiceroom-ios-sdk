@@ -485,3 +485,8 @@ NS_ASSUME_NONNULL_END
 
 4. 此刻，你的语聊房就正式初始化完成了。其他方法和对应回调可通过注释了解。
 
+## 安装
+
+推荐使用Pod安装。
+在Podfile中，加入 pod 'RCVoiceRoomLib'
+然后执行pod install 即可。
