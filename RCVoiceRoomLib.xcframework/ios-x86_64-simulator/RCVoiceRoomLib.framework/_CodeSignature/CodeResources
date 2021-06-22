@@ -4,13 +4,33 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/RCVoiceRoomDelegate.h</key>
+		<data>
+		o3qdyfK3izEV5yWw1jETjSTsft0=
+		</data>
+		<key>Headers/RCVoiceRoomEngine.h</key>
+		<data>
+		JuNTyyT6CGaQbIcvWHhbp3ap+/g=
+		</data>
+		<key>Headers/RCVoiceRoomErrorCode.h</key>
+		<data>
+		UbkFA4lJodqVFCzKMnyXGsJb3+4=
+		</data>
+		<key>Headers/RCVoiceRoomInfo.h</key>
+		<data>
+		K5AOfjIj5cAoHhCbMrBZPF0vHLw=
+		</data>
 		<key>Headers/RCVoiceRoomLib.h</key>
 		<data>
 		wRcQB+am/uo6OylW5lf5RGt7rTY=
 		</data>
+		<key>Headers/RCVoiceSeatInfo.h</key>
+		<data>
+		0G/ERDudH+tBvXnWLQG31Bvh5j8=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		tj3MwlgL6n9N8RHYFhYnQy3u5AY=
+		bxdC9kJ6khgwCrRHPcLHT/CaulY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -23,11 +43,46 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/RCVoiceRoomDelegate.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NMt5rnZvRKFrQrEDX/+L6Q7aMHemZscm/M+nUxJIcPM=
+			</data>
+		</dict>
+		<key>Headers/RCVoiceRoomEngine.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uW4OxcEbnd39Yufc8EfedGLwEHxQEDQYPuuKeuVyZSg=
+			</data>
+		</dict>
+		<key>Headers/RCVoiceRoomErrorCode.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			a6trVpq6aYo8goxyXgu11w3fgFRqV3C8tlahVSKajKE=
+			</data>
+		</dict>
+		<key>Headers/RCVoiceRoomInfo.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			H4XabXJMSMZE94DR1Bpx2Qu+06YQKJs3xT1NbTNxE0s=
+			</data>
+		</dict>
 		<key>Headers/RCVoiceRoomLib.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			80NMjfAIj+AXvFuJ5UIEwIXzIy//d8BKhCsJKEPP2as=
+			</data>
+		</dict>
+		<key>Headers/RCVoiceSeatInfo.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			u92s+2wDqVLKm800fFDUfbFX0DInZ3Guqa+mUYS1t5k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
