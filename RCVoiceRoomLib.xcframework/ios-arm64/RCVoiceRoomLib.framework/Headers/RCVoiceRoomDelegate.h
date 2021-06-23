@@ -11,10 +11,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class RCMessage;
 @protocol RCVoiceRoomDelegate <NSObject>
 
 /// 房间的信息和麦位信息初始化完成回调，用户可在此执行关于房间的其他初始化操作
 - (void)roomKVDidReady;
+
+/// 房间发生异常问题
+- (void)roomDidOccurError:(RCVoiceRoomErrorCode)code;
 
 /// 房间信息变更回调
 /// 第一次加入房间时也会触发回调

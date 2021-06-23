@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, RCSeatStatus) {
 /// 是否静音
 @property (nonatomic, assign, getter=isMuted) BOOL mute;
 
-/// 若麦位被人使用，则userId为使用麦味的用户id
+/// 若麦位被人使用，则userId为使用麦位的用户id
 @property (nonatomic, copy, nullable) NSString *userId;
 
 /// 其他信息

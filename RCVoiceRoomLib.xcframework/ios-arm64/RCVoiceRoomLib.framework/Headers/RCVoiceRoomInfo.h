@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <RongRTCLib/RongRTCLib.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,19 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// 房间麦位数量，不可为空
 @property (nonatomic, assign) NSInteger seatCount;
 
-/// 房间音质
-@property (nonatomic, assign) RCRTCAudioQuality audioQuality;
-
-/// 房间场景
-@property (nonatomic, assign) RCRTCAudioScenario scenario;
-
 /// 是否自由上麦
 @property (nonatomic, assign) BOOL isFreeEnterSeat;
 
-/// 是否将所有麦位静音
+/// 房间麦位静音状态，状态标记，直接修改不会自动触发静音麦位操作
 @property (nonatomic, assign) BOOL isMuteAll;
 
-/// 是否将所有麦位关闭
+/// 房间麦位锁定状态，状态标记，直接修改不会自动触发锁麦操作
 @property (nonatomic, assign) BOOL isLockAll;
 
 /// 自定义属性，可以传入json等

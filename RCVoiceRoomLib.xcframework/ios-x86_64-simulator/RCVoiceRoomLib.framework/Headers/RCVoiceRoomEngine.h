@@ -6,12 +6,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <RongRTCLib/RongRTCLib.h>
+
 #import "RCVoiceRoomErrorCode.h"
+#import "RCVoiceRoomDefine.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class RCVoiceRoomInfo;
+@class RCVoiceRoomInfo, RCMessageContent;
 @protocol RCVoiceRoomDelegate, RCIMClientReceiveMessageDelegate;
 
 
@@ -48,6 +49,7 @@ typedef void(^RCVoiceRoomErrorBlock)(RCVoiceRoomErrorCode code, NSString *msg);
                    error:(RCVoiceRoomErrorBlock)errorBlock;
 
 /// 断开连接
+/// 用户退出登录调用
 - (void)disconnect;
 
 /// 用户根据roomId加入一个语聊房
@@ -165,8 +167,8 @@ typedef void(^RCVoiceRoomErrorBlock)(RCVoiceRoomErrorCode code, NSString *msg);
 /// 设置房间音频质量和场景
 /// @param quality 音频质量
 /// @param scenario 音频场景
-- (void)setAudioQuality:(RCRTCAudioQuality)quality
-               scenario:(RCRTCAudioScenario)scenario;
+- (void)setAudioQuality:(RCVoiceRoomAudioQuality)quality
+               scenario:(RCVoiceRoomAudioScenario)scenario;
 
 /// 设置是否使用扬声器
 /// @param isEnable 是否使用
