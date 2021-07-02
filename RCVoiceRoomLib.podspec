@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
     s.static_framework = true
     
     s.xcconfig = {
-        'VALID_ARCHS' =>  'arm64 x86_64',
+        'VALID_ARCHS' =>  'arm64 x86_64 armv7',
     }
     
     s.pod_target_xcconfig = {
