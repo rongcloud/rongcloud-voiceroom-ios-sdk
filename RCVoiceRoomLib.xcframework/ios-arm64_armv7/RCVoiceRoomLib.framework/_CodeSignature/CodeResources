@@ -8,6 +8,10 @@
 		<data>
 		UP5bAnsflyUUVhXiu7RSoDUvVN8=
 		</data>
+		<key>Headers/RCVoiceRoomDelegate.h</key>
+		<data>
+		Em2GKRTilSgXujmLc2hmQdIU7Ew=
+		</data>
 		<key>Headers/RCVoiceRoomEngine.h</key>
 		<data>
 		QN6Gr8if1nwoIP9RQzIwvRW4bPE=
@@ -30,7 +34,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		cQl1DQplod2gaAEiHLckMfGXCI8=
+		nA5UypvttK/aU7/qILqIHyTfT4Q=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -52,6 +56,17 @@
 			<key>hash2</key>
 			<data>
 			IuelxiFAXnm9D/NxzMwr0/ufgCcoCmrD126inShVdo0=
+			</data>
+		</dict>
+		<key>Headers/RCVoiceRoomDelegate.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Em2GKRTilSgXujmLc2hmQdIU7Ew=
+			</data>
+			<key>hash2</key>
+			<data>
+			Q7LxADOdgyBLflxI+gFxaxGWCfg1aWhvFBVSUfcSOnY=
 			</data>
 		</dict>
 		<key>Headers/RCVoiceRoomEngine.h</key>
