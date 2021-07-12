@@ -64,6 +64,10 @@ typedef NS_ENUM(NSInteger, RCVoiceRoomErrorCode) {
     RCVoiceRoomAcceptInvitationFailed,
     /// 拒绝请求发送失败
     RCVoiceRoomRejectInvitationFailed,
+    /// 创建语聊房失败
+    RCVoiceRoomCreateRoomFailed,
+    /// 用户ID为空
+    RCVoiceRoomUserIdIsEmpty
 };
 
 #endif /* RCVoiceRoomErrorCode_h */

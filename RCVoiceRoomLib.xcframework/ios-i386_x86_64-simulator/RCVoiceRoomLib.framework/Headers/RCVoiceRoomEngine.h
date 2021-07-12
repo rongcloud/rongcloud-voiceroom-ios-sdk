@@ -40,6 +40,11 @@ typedef void(^RCVoiceRoomErrorBlock)(RCVoiceRoomErrorCode code, NSString *msg);
 /// @param appKey 在融云系统中申请的key
 - (void)initWithAppkey:(NSString *)appKey;
 
+/// 设置当前的用户Id
+/// 如果使用了RCCoreClient来 connectToken,那么需要手动调用该方法初始化用户id
+/// @param userId 用户id
+- (void)setCurrentUserId:(NSString *)userId;
+
 /// 连接融云服务器，如果使用RCCoreClient连接过服务可不用调用此方法
 /// @param appToken 从服务器中获取的token
 /// @param successBlock 连接成功回调
@@ -51,6 +56,16 @@ typedef void(^RCVoiceRoomErrorBlock)(RCVoiceRoomErrorCode code, NSString *msg);
 /// 断开连接
 /// 用户退出登录调用
 - (void)disconnect;
+
+/// 创建并加入语聊房
+/// @param roomId 语聊房Id
+/// @param roomInfo 语聊房信息，语聊房名字和麦位数量不可为空
+/// @param successBlock 创建成功回调
+/// @param errorBlock 创建失败回调
+- (void)createAndJoinRoom:(NSString *)roomId
+              room:(RCVoiceRoomInfo *)roomInfo
+           success:(RCVoiceRoomSuccessBlock)successBlock
+             error:(RCVoiceRoomErrorBlock)errorBlock;
 
 /// 用户根据roomId加入一个语聊房
 /// @param roomId 房间id
