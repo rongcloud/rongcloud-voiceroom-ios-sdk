@@ -38,9 +38,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 自动生成该类对应的json字符串
 - (NSString *)jsonString;
 
-/// 后端传入初始化语聊房信息需要附带的kv信息。
-- (NSDictionary<NSString *, NSString *> *)createRoomKV;
-
 @end
 
 NS_ASSUME_NONNULL_END
