@@ -40,11 +40,6 @@ typedef void(^RCVoiceRoomErrorBlock)(RCVoiceRoomErrorCode code, NSString *msg);
 /// @param appKey 在融云系统中申请的key
 - (void)initWithAppkey:(NSString *)appKey;
 
-/// 设置当前的用户Id
-/// 如果使用了RCCoreClient来 connectToken,那么需要手动调用该方法初始化用户id
-/// @param userId 用户id
-- (void)setCurrentUserId:(NSString *)userId;
-
 /// 连接融云服务器，如果使用RCCoreClient连接过服务可不用调用此方法
 /// @param appToken 从服务器中获取的token
 /// @param successBlock 连接成功回调
@@ -253,6 +248,13 @@ typedef void(^RCVoiceRoomErrorBlock)(RCVoiceRoomErrorCode code, NSString *msg);
 /// @param content 刷新操作的内容
 - (void)notifyVoiceRoom:(NSString *)name
                 content:(NSString *)content;
+
+/*!
+ 获取 SDK 版本号
+ @return 版本号
+ @remarks 参数配置
+ */
++ (NSString *)getVersion;
 
 @end
 
