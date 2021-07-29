@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSUInteger, RCSeatStatus) {
     RCSeatStatusEmpty = 0,
     RCSeatStatusUsing = 1,
-    RCSeatStatusLocking = 2,
+    RCSeatStatusLocking = 2
 };
 
 @interface RCVoiceSeatInfo : NSObject<NSCopying>
