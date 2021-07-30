@@ -11,6 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class RCMessage;
+
 @protocol RCVoiceRoomDelegate <NSObject>
 
 /// 房间的信息和麦位信息初始化完成回调，用户可在此执行关于房间的其他初始化操作
