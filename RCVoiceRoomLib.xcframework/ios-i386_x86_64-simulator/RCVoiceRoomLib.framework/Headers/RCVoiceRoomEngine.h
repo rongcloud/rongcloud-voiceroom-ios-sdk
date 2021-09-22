@@ -12,12 +12,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class RCVoiceRoomInfo, RCMessageContent;
+@class RCVoiceRoomInfo, RCMessageContent, RCVoiceSeatInfo;
 @protocol RCVoiceRoomDelegate, RCIMClientReceiveMessageDelegate;
 
 
 typedef void(^RCVoiceRoomSuccessBlock)(void);
 typedef void(^RCVoiceRoomErrorBlock)(RCVoiceRoomErrorCode code, NSString *msg);
+
+/// PK回复类别
+typedef NS_ENUM(NSUInteger, RCPKResponseType) {
+    RCPKResponseAgree = 0,
+    RCPKResponseReject = 1,
+    RCPKResponseIgnore = 2
+};
 
 @interface RCVoiceRoomEngine : NSObject
 
@@ -69,6 +76,12 @@ typedef void(^RCVoiceRoomErrorBlock)(RCVoiceRoomErrorCode code, NSString *msg);
 - (void)joinRoom:(NSString *)roomId
          success:(RCVoiceRoomSuccessBlock)successBlock
            error:(RCVoiceRoomErrorBlock)errorBlock;
+
+/// 获取最新的麦位信息
+/// @param successBlock 麦位信息列表回调
+/// @param errorBlock 失败回调
+- (void)getLatestSeatInfo:(void (^)(NSArray<RCVoiceSeatInfo *>*))successBlock
+                    error:(RCVoiceRoomErrorBlock)errorBlock;
 
 /// 离开房间
 /// @param successBlock 离开房间成功
@@ -142,7 +155,17 @@ typedef void(^RCVoiceRoomErrorBlock)(RCVoiceRoomErrorCode code, NSString *msg);
          success:(RCVoiceRoomSuccessBlock)successBlock
            error:(RCVoiceRoomErrorBlock)errorBlock;
 
-/// 将所有麦位静音打开或者关闭
+/// 更新麦位extra属性
+/// @param index 麦位序号
+/// @param extra 更新的extra
+/// @param successBlock 更新成功回调
+/// @param errorBlock 更新失败回调
+- (void)updateSeatInfo:(NSUInteger)index
+              withExtra:(NSString *)extra
+                success:(RCVoiceRoomSuccessBlock)successBlock
+                 error:(RCVoiceRoomErrorBlock)errorBlock;
+
+/// 将除了自身所在麦位的其余所有麦位静音或者取消静音
 /// @param isMute 是否静音
 - (void)muteOtherSeats:(BOOL)isMute;
 
@@ -248,6 +271,60 @@ typedef void(^RCVoiceRoomErrorBlock)(RCVoiceRoomErrorCode code, NSString *msg);
 /// @param content 刷新操作的内容
 - (void)notifyVoiceRoom:(NSString *)name
                 content:(NSString *)content;
+
+@end
+
+@interface RCVoiceRoomEngine (PK)
+
+/// 发送PK邀请
+/// @param inviteeRoomId 被邀请用户所在的房间id
+/// @param inviteeUserId 被邀请人的用户id
+/// @param successBlock 邀请发送成功回调
+/// @param errorBlock 邀请发送失败回调
+- (void)sendPKInvitation:(NSString *)inviteeRoomId
+                          invitee:(NSString *)inviteeUserId
+                           success:(RCVoiceRoomSuccessBlock)successBlock
+                             error:(RCVoiceRoomErrorBlock)errorBlock;
+
+/// 撤回已发送的PK邀请
+/// @param inviteeRoomId 被邀请用户所在的房间id
+/// @param inviteeUserId 被邀请人的用户id
+/// @param successBlock 邀请撤回发送成功
+/// @param errorBlock 邀请撤回发送失败
+- (void)cancelPKInvitation:(NSString *)inviteeRoomId
+                      invitee:(NSString *)inviteeUserId
+                       success:(RCVoiceRoomSuccessBlock)successBlock
+                         error:(RCVoiceRoomErrorBlock)errorBlock;
+
+/// 回复邀请人是否接受邀请
+/// @param inviterRoomId 邀请人所在的房间id
+/// @param inviterUserId 邀请人的用户id
+/// @param type 回应邀请者的类型，接受，拒绝或者忽略
+/// @param successBlock 回复发送成功
+/// @param errorBlock 回复发送失败
+- (void)responsePKInvitation:(NSString *)inviterRoomId
+                         inviter:(NSString *)inviterUserId
+                          responseType:(RCPKResponseType)type
+                        success:(RCVoiceRoomSuccessBlock)successBlock
+                          error:(RCVoiceRoomErrorBlock)errorBlock;
+
+/// 屏蔽PK对象的语音
+/// @param isMute 是否屏蔽
+/// @param successBlock 调用成功
+/// @param errorBlock 调用失败
+- (void)mutePKUser:(BOOL)isMute
+           success:(RCVoiceRoomSuccessBlock)successBlock
+             error:(RCVoiceRoomErrorBlock)errorBlock;
+
+/// 退出PK
+/// @param successBlock 退出成功
+/// @param errorBlock 退出失败
+- (void)quitPK:(RCVoiceRoomSuccessBlock)successBlock
+         error:(RCVoiceRoomErrorBlock)errorBlock;
+
+@end
+
+@interface RCVoiceRoomEngine (Version)
 
 /*!
  获取 SDK 版本号

@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 #import "RCVoiceRoomInfo.h"
 #import "RCVoiceSeatInfo.h"
+#import "RCVoiceRoomErrorCode.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class RCMessage;
 
 @protocol RCVoiceRoomDelegate <NSObject>
+
+@optional
 
 /// 房间的信息和麦位信息初始化完成回调，用户可在此执行关于房间的其他初始化操作
 - (void)roomKVDidReady;
@@ -118,6 +121,44 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param targetId 被踢出房间的用户id
 /// @param userId 执行踢某人出房间的用户id
 - (void)userDidKickFromRoom:(NSString *)targetId byUserId:(NSString *)userId;
+
+
+/// 网络延迟
+/// @param rtt 单位ms
+- (void)networkStatus:(NSInteger)rtt;
+
+/// PK 运行的回调，如果PK连接成功，或者进入正在进行PK的房间均会触发此回调
+/// @param inviterRoomId 邀请 PK 的用户id
+/// @param inviterUserId 邀请 PK 的用户房间id
+/// @param inviteeRoomId 被邀请 PK 的用户id
+/// @param inviteeUserId 被邀请 PK 的用户房间id
+- (void)pkOngoingWithInviterRoom:(NSString *)inviterRoomId
+               withInviterUserId:(NSString *)inviterUserId
+                 withInviteeRoom:(NSString *)inviteeRoomId
+               withInviteeUserId:(NSString *)inviteeUserId;
+
+/// 对方结束PK时会触发此回调
+- (void)pkDidFinish;
+
+/// 收到邀请 PK 的回调
+/// @param inviterRoomId 邀请者的房间id
+/// @param inviterUserId 邀请者的用户id
+- (void)pkInvitationDidReceiveFromRoom:(NSString *)inviterRoomId byUser:(NSString *)inviterUserId;
+
+/// 邀请者取消 PK 邀请回调
+/// @param inviterRoomId 邀请者的房间id
+/// @param inviterUserId 邀请者的用户id
+- (void)cancelPKInvitationDidReceiveFromRoom:(NSString *)inviterRoomId byUser:(NSString *)inviterUserId;
+
+/// 被邀请者拒绝 PK 邀请回调
+/// @param inviteeRoomId 被邀请者的房间id
+/// @param initeeUserId 被邀请者的用户id
+- (void)rejectPKInvitationDidReceiveFromRoom:(NSString *)inviteeRoomId byUser:(NSString *)initeeUserId;
+
+/// 邀请者忽略 PK 邀请回调
+/// @param inviteeRoomId 被邀请者的房间id
+/// @param inviteeUserId 被邀请者的用户id
+- (void)ignorePKInvitationDidReceiveFromRoom:(NSString *)inviteeRoomId byUser:(NSString *)inviteeUserId;
 
 @end
 

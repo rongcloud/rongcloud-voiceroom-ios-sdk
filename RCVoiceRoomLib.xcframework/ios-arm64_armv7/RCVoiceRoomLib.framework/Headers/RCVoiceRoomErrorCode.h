@@ -11,9 +11,9 @@ typedef NS_ENUM(NSInteger, RCVoiceRoomErrorCode) {
     /// 操作成功
     RCVoiceRoomSuccess = 70000,
     /// 连接服务器失败
-    RCVoiceRoomConnectTokenFailed,
+    RCVoiceRoomConnectTokenFailed = 70001,
     /// 麦位序号不对
-    RCVoiceRoomSeatIndexOutOfRange,
+    RCVoiceRoomSeatIndexOutOfRange = 70002,
     /// 用户已经在麦位上
     RCVoiceRoomUserAlreadyOnSeat,
     /// 用户不在麦位上
@@ -67,7 +67,19 @@ typedef NS_ENUM(NSInteger, RCVoiceRoomErrorCode) {
     /// 创建语聊房失败
     RCVoiceRoomCreateRoomFailed,
     /// 用户ID为空
-    RCVoiceRoomUserIdIsEmpty
+    RCVoiceRoomUserIdIsEmpty,
+    /// 获取麦位信息失败
+    RCVoiceRoomGetLatestSeatInfoFailed,
+    /// 开始PK失败
+    RCVoiceRoomBeginPKFailed,
+    /// 退出PK失败
+    RCVoiceRoomQuitPKFailed,
+    /// 发送PK邀请失败
+    RCVoiceRoomSendPKInviteFaild,
+    /// 取消PK请求失败
+    RCVoiceRoomCancelPKFailed,
+    /// 静音PK对象失败
+    RCVoiceRoomMutePKUserFailed
 };
 
 #endif /* RCVoiceRoomErrorCode_h */
