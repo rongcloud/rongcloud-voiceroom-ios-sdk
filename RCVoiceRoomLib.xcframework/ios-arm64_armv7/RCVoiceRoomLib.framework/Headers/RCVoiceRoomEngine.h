@@ -35,30 +35,6 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 /// @param delegate 语聊房delegate
 - (void)setDelegate:(id<RCVoiceRoomDelegate>)delegate;
 
-/// 增加其他消息监听Delegate
-/// @param delegate RCMicMessageHandleDelegate
-- (void)addMessageReceiveDelegate:(id<RCIMClientReceiveMessageDelegate>)delegate;
-
-/// 删除某个消息监听Delegate
-/// @param delegate RCMicMessageHandleDelegate
-- (void)removeMessageReceiveDelegate:(id<RCIMClientReceiveMessageDelegate>)delegate;
-
-/// 初始化AppKey, 如果已初始化RCCoreClient可以不调用此方法
-/// @param appKey 在融云系统中申请的key
-- (void)initWithAppkey:(NSString *)appKey;
-
-/// 连接融云服务器，如果使用RCCoreClient连接过服务可不用调用此方法
-/// @param appToken 从服务器中获取的token
-/// @param successBlock 连接成功回调
-/// @param errorBlock 连接失败回调
-- (void)connectWithToken:(NSString *)appToken
-                 success:(RCVoiceRoomSuccessBlock)successBlock
-                   error:(RCVoiceRoomErrorBlock)errorBlock;
-
-/// 断开连接
-/// 用户退出登录调用
-- (void)disconnect;
-
 /// 创建并加入语聊房
 /// @param roomId 语聊房Id
 /// @param roomInfo 语聊房信息，语聊房名字和麦位数量不可为空
@@ -324,14 +300,31 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 
 @end
 
-@interface RCVoiceRoomEngine (Version)
+@interface RCVoiceRoomEngine (Deprecated)
 
-/*!
- 获取 SDK 版本号
- @return 版本号
- @remarks 参数配置
- */
-+ (NSString *)getVersion;
+/// 初始化AppKey, 如果已初始化RCCoreClient可以不调用此方法
+/// @param appKey 在融云系统中申请的key
+- (void)initWithAppkey:(NSString *)appKey __attribute__((deprecated("initWithAppkey: is deprecated, use IMLib/IMKit initWithAppkey: instead.")));
+
+/// 连接融云服务器，如果使用RCCoreClient连接过服务可不用调用此方法
+/// @param appToken 从服务器中获取的token
+/// @param successBlock 连接成功回调
+/// @param errorBlock 连接失败回调
+- (void)connectWithToken:(NSString *)appToken
+                 success:(RCVoiceRoomSuccessBlock)successBlock
+                   error:(RCVoiceRoomErrorBlock)errorBlock __attribute__((deprecated("initWithAppkey: is deprecated, use IMLib/IMKit initWithAppkey: instead.")));
+
+/// 断开连接
+/// 用户退出登录调用
+- (void)disconnect __attribute__((deprecated("disconnect is deprecated, use IMLib/IMKit disconnect instead.")));
+
+/// 增加其他消息监听Delegate
+/// @param delegate RCMicMessageHandleDelegate
+- (void)addMessageReceiveDelegate:(id<RCIMClientReceiveMessageDelegate>)delegate __attribute__((deprecated("addMessageReceiveDelegate: is deprecated, use IMLib/IMKit delegate instead.")));
+
+/// 删除某个消息监听Delegate
+/// @param delegate RCMicMessageHandleDelegate
+- (void)removeMessageReceiveDelegate:(id<RCIMClientReceiveMessageDelegate>)delegate __attribute__((deprecated("removeMessageReceiveDelegate: is deprecated, use IMLib/IMKit delegate instead.")));
 
 @end
 

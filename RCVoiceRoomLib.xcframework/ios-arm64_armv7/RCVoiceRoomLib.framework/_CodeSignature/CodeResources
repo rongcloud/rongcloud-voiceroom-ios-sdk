@@ -18,11 +18,11 @@
 		</data>
 		<key>Headers/RCVoiceRoomEngine.h</key>
 		<data>
-		KXc21JbnRBpsxNWC8RKUQl/Zwf8=
+		lZeC2s4PXMXHWgRFQcRzLcduOCI=
 		</data>
 		<key>Headers/RCVoiceRoomErrorCode.h</key>
 		<data>
-		T8MkscHX2CvdbEVPFNeB/yvLvF4=
+		qlxcUmLLLQsjn4+MAI2AF9DzAw4=
 		</data>
 		<key>Headers/RCVoiceRoomInfo.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		XmnpjeEtq05XBM/sc861bbWCXoY=
+		UOmFhWX2wfmS1LKo8ybJeD2ipGA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -88,22 +88,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KXc21JbnRBpsxNWC8RKUQl/Zwf8=
+			lZeC2s4PXMXHWgRFQcRzLcduOCI=
 			</data>
 			<key>hash2</key>
 			<data>
-			iYgXi0sm3tL9flZBFcqvr4UR/hU+WGhEtKVdOY76G1k=
+			8Gt+u0x4VPL39ZpPXDwq6iZmyiDNLWW7zVlX++cMiN4=
 			</data>
 		</dict>
 		<key>Headers/RCVoiceRoomErrorCode.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			T8MkscHX2CvdbEVPFNeB/yvLvF4=
+			qlxcUmLLLQsjn4+MAI2AF9DzAw4=
 			</data>
 			<key>hash2</key>
 			<data>
-			NkhTUgWYzwWoqJSSxNA1j89+PQKXBfYLpB76fVf2w/k=
+			qiaficb3n7iQfU8k17FQOpkepYMT04im3GZA6BUa5zA=
 			</data>
 		</dict>
 		<key>Headers/RCVoiceRoomInfo.h</key>

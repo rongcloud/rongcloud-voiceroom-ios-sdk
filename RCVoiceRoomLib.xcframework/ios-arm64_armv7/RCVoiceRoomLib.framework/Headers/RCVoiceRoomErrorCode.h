@@ -79,7 +79,9 @@ typedef NS_ENUM(NSInteger, RCVoiceRoomErrorCode) {
     /// 取消PK请求失败
     RCVoiceRoomCancelPKFailed,
     /// 静音PK对象失败
-    RCVoiceRoomMutePKUserFailed
+    RCVoiceRoomMutePKUserFailed,
+    /// 创建房间的信息不正确
+    RCVoiceRoomCreateRoomInfoNotCorrect
 };
 
 #endif /* RCVoiceRoomErrorCode_h */
