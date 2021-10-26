@@ -6,7 +6,7 @@
 
 推荐使用Pod安装：
 ```
-pod 'RCVoiceRoomLib', '~> 2.0.2'
+pod 'RCVoiceRoomLib'
 ```
 
 ## 解决方案
