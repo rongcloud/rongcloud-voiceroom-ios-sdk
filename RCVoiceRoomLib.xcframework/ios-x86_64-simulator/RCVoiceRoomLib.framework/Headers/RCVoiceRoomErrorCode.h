@@ -81,7 +81,11 @@ typedef NS_ENUM(NSInteger, RCVoiceRoomErrorCode) {
     /// 静音PK对象失败
     RCVoiceRoomMutePKUserFailed,
     /// 创建房间的信息不正确
-    RCVoiceRoomCreateRoomInfoNotCorrect
+    RCVoiceRoomCreateRoomInfoNotCorrect,
+    /// 已经在PK中
+    RCVoiceRoomAlreadyInPK,
+    /// 切换角色失败
+    RCVoiceRoomSwitchRoleFailed
 };
 
 #endif /* RCVoiceRoomErrorCode_h */

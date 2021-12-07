@@ -14,19 +14,19 @@
 		</data>
 		<key>Headers/RCVoiceRoomDelegate.h</key>
 		<data>
-		fTHOyREU/TXGl5822t6MTPZeHxI=
+		wZOEZVDqklzM2qtm/kaFFg1hFhU=
 		</data>
 		<key>Headers/RCVoiceRoomEngine.h</key>
 		<data>
-		lZeC2s4PXMXHWgRFQcRzLcduOCI=
+		T5M8yIi2f7pQIlsEYHvwQ9V9MSY=
 		</data>
 		<key>Headers/RCVoiceRoomErrorCode.h</key>
 		<data>
-		qlxcUmLLLQsjn4+MAI2AF9DzAw4=
+		PS3o2U32zLzKwR1JmTPmQgqRYd8=
 		</data>
 		<key>Headers/RCVoiceRoomInfo.h</key>
 		<data>
-		zNaPy+zyfT1ouocAip3h4z8DuWM=
+		98OhNvRsyxTfFsu23fIoaVLH39s=
 		</data>
 		<key>Headers/RCVoiceRoomLib.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		BZohuXdn1Z7EzGR45vA/n+ubBEk=
+		S6vSAlQjYjprGoh8c64LjrMy2bY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -77,44 +77,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fTHOyREU/TXGl5822t6MTPZeHxI=
+			wZOEZVDqklzM2qtm/kaFFg1hFhU=
 			</data>
 			<key>hash2</key>
 			<data>
-			PEqrCEOB0nTm/m3Vom+BtNyNinQkU+5MmaCdhw97tBM=
+			1kE+1oouPQ32kHecWnonbQGr4lpeO2oBdzG6MmjiJQk=
 			</data>
 		</dict>
 		<key>Headers/RCVoiceRoomEngine.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lZeC2s4PXMXHWgRFQcRzLcduOCI=
+			T5M8yIi2f7pQIlsEYHvwQ9V9MSY=
 			</data>
 			<key>hash2</key>
 			<data>
-			8Gt+u0x4VPL39ZpPXDwq6iZmyiDNLWW7zVlX++cMiN4=
+			rtRotl1kDbr8bERi2OfAd4/pDV3P413ACqbmmzPdLik=
 			</data>
 		</dict>
 		<key>Headers/RCVoiceRoomErrorCode.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qlxcUmLLLQsjn4+MAI2AF9DzAw4=
+			PS3o2U32zLzKwR1JmTPmQgqRYd8=
 			</data>
 			<key>hash2</key>
 			<data>
-			qiaficb3n7iQfU8k17FQOpkepYMT04im3GZA6BUa5zA=
+			N8ZXTvCBrMOJqbsjJ2JF+I1oQJKLTQc6Zk5s0pxSwYc=
 			</data>
 		</dict>
 		<key>Headers/RCVoiceRoomInfo.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zNaPy+zyfT1ouocAip3h4z8DuWM=
+			98OhNvRsyxTfFsu23fIoaVLH39s=
 			</data>
 			<key>hash2</key>
 			<data>
-			FrFepc0VUzJbxMipDrZHAQ3zGff1lvweimB1XIRsBqM=
+			crdWcOg3biagP1gFTu/fnVq5GjvZS8qCxgitJmM0kYA=
 			</data>
 		</dict>
 		<key>Headers/RCVoiceRoomLib.h</key>

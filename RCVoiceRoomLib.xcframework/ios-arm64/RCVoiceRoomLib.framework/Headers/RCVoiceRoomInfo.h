@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 房间名称，不可为空
 @property (nonatomic, copy) NSString *roomName;
 
+/// 房间成员数
+@property (nonatomic, assign) NSInteger totalMemberCount;
+
 /// 房间麦位数量，不可为空
 @property (nonatomic, assign) NSInteger seatCount;
 

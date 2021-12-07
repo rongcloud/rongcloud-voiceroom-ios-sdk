@@ -29,6 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param roomInfo 房间信息
 - (void)roomInfoDidUpdate:(RCVoiceRoomInfo *)roomInfo;
 
+/// 房间已关闭
+- (void)roomDidClosed;
+
 /// 房间座位变更回调，包括自身上麦或下麦也会触发此回调
 /// @param seatInfolist 座位列表信息
 - (void)seatInfoDidUpdate:(NSArray<RCVoiceSeatInfo *> *)seatInfolist;
@@ -59,17 +62,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 观众进房回调
 /// @param userId 观众Id
-- (void)userDidEnter:(NSString *)userId;
+/// @param memberCount 房间在线人数
+- (void)userDidEnter:(NSString *)userId withUserCount:(NSInteger)count;
 
 /// 观众退房回调
 /// @param userId 观众Id
-- (void)userDidExit:(NSString *)userId;
+/// @param memberCount 房间在线人数
+- (void)userDidExit:(NSString *)userId withUserCount:(NSInteger)count;
 
 /// 用户麦克风状态变化回调
-/// @param seatIndex 麦位序号
-/// @param isSpeaking 是否正在说话
-- (void)speakingStateDidChange:(NSUInteger)seatIndex
-                                  speakingState:(BOOL)isSpeaking;
+/// @param index 麦位序号
+/// @param speaking 是否正在说话
+/// @param audioLevel 音量值
+- (void)seatSpeakingStateChanged:(BOOL)speaking
+                         atIndex:(NSInteger)index
+                      audioLevel:(NSInteger)level;
 
 /// 收取信息回调
 /// @param message 收到的消息
@@ -77,7 +84,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// 收到房间通知
-/// @param name 通知的名臣
+/// @param name 通知的名称
 /// @param content 通知的内容
 - (void)roomNotificationDidReceive:(NSString *)name
                            content:(NSString *)content;
@@ -127,17 +134,18 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param rtt 单位ms
 - (void)networkStatus:(NSInteger)rtt;
 
-/// PK 运行的回调，如果PK连接成功，或者进入正在进行PK的房间均会触发此回调
+/// PK 如果连接成功，会触发此回调，该回调仅会在 PK 连接成功时触发一次
 /// @param inviterRoomId 邀请 PK 的用户id
 /// @param inviterUserId 邀请 PK 的用户房间id
 /// @param inviteeRoomId 被邀请 PK 的用户id
 /// @param inviteeUserId 被邀请 PK 的用户房间id
-- (void)pkOngoingWithInviterRoom:(NSString *)inviterRoomId
+- (void)pkDidConnectBetweenInviterRoom:(NSString *)inviterRoomId
                withInviterUserId:(NSString *)inviterUserId
                  withInviteeRoom:(NSString *)inviteeRoomId
                withInviteeUserId:(NSString *)inviteeUserId;
 
 /// 对方结束PK时会触发此回调
+/// 收到该回调后会自动退出 PK 连接
 - (void)pkDidFinish;
 
 /// 收到邀请 PK 的回调
@@ -159,6 +167,19 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param inviteeRoomId 被邀请者的房间id
 /// @param inviteeUserId 被邀请者的用户id
 - (void)ignorePKInvitationDidReceiveFromRoom:(NSString *)inviteeRoomId byUser:(NSString *)inviteeUserId;
+
+/// 用户麦克风状态变化回调
+/// @param seatIndex 麦位序号
+/// @param isSpeaking 是否正在说话
+- (void)speakingStateDidChange:(NSUInteger)seatIndex speakingState:(BOOL)isSpeaking __attribute__((deprecated("speakingStateDidChange:speakingState: is deprecated, use seatSpeakingStateChanged:atIndex:audioLevel instead.")));
+
+/// 观众进房回调
+/// @param userId 观众Id
+- (void)userDidEnter:(NSString *)userId __attribute__((deprecated("userDidEnter: is deprecated, use userDidEnter:withUserCount instead.")));
+
+/// 观众退房回调
+/// @param userId 观众Id
+- (void)userDidExit:(NSString *)userId __attribute__((deprecated("userDidExit: is deprecated, use userDidExit:withUserCount instead.")));
 
 @end
 

@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class RCVoiceRoomInfo, RCMessageContent, RCVoiceSeatInfo;
+@class RCVoiceRoomInfo, RCMessageContent, RCVoiceSeatInfo, RCVoicePKInfo;
 @protocol RCVoiceRoomDelegate, RCIMClientReceiveMessageDelegate;
 
 
@@ -100,8 +100,8 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 /// @param successBlock 下麦成功
 /// @param errorBlock 下麦失败
 - (void)kickUserFromSeat:(NSString *)userId
-         success:(RCVoiceRoomSuccessBlock)successBlock
-           error:(RCVoiceRoomErrorBlock)errorBlock;
+                 success:(RCVoiceRoomSuccessBlock)successBlock
+                   error:(RCVoiceRoomErrorBlock)errorBlock;
 
 /// 将某个用户踢出房间
 /// @param userId 踢出房间的userId
@@ -111,7 +111,7 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
                       success:(RCVoiceRoomSuccessBlock)successBlock
                         error:(RCVoiceRoomErrorBlock)errorBlock;
 
-/// 锁定某个麦位
+/// 锁定某个麦位，如果该麦位有人，会将用户强制下麦
 /// @param seatIndex 麦位序号
 /// @param isLocked 是否锁麦位
 /// @param successBlock 锁麦成功
@@ -150,6 +150,7 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 - (void)muteAllRemoteStreams:(BOOL)isMute;
 
 /// 将所有麦位锁麦或者解除锁麦
+/// 该方法不会锁定有人的麦位
 /// @param isLock 是否锁麦
 - (void)lockOtherSeats:(BOOL)isLock;
 
@@ -292,39 +293,19 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
            success:(RCVoiceRoomSuccessBlock)successBlock
              error:(RCVoiceRoomErrorBlock)errorBlock;
 
+/// 恢复跨房间 PK
+/// @param info PK 的信息
+/// @param successBlock 恢复成功
+/// @param errorBlock 恢复失败
+- (void)resumePKWithPKInfo:(RCVoicePKInfo *)info
+                   success:(RCVoiceRoomSuccessBlock)successBlock
+                      error:(RCVoiceRoomErrorBlock)errorBlock;
+
 /// 退出PK
 /// @param successBlock 退出成功
 /// @param errorBlock 退出失败
 - (void)quitPK:(RCVoiceRoomSuccessBlock)successBlock
          error:(RCVoiceRoomErrorBlock)errorBlock;
-
-@end
-
-@interface RCVoiceRoomEngine (Deprecated)
-
-/// 初始化AppKey, 如果已初始化RCCoreClient可以不调用此方法
-/// @param appKey 在融云系统中申请的key
-- (void)initWithAppkey:(NSString *)appKey __attribute__((deprecated("initWithAppkey: is deprecated, use IMLib/IMKit initWithAppkey: instead.")));
-
-/// 连接融云服务器，如果使用RCCoreClient连接过服务可不用调用此方法
-/// @param appToken 从服务器中获取的token
-/// @param successBlock 连接成功回调
-/// @param errorBlock 连接失败回调
-- (void)connectWithToken:(NSString *)appToken
-                 success:(RCVoiceRoomSuccessBlock)successBlock
-                   error:(RCVoiceRoomErrorBlock)errorBlock __attribute__((deprecated("initWithAppkey: is deprecated, use IMLib/IMKit initWithAppkey: instead.")));
-
-/// 断开连接
-/// 用户退出登录调用
-- (void)disconnect __attribute__((deprecated("disconnect is deprecated, use IMLib/IMKit disconnect instead.")));
-
-/// 增加其他消息监听Delegate
-/// @param delegate RCMicMessageHandleDelegate
-- (void)addMessageReceiveDelegate:(id<RCIMClientReceiveMessageDelegate>)delegate __attribute__((deprecated("addMessageReceiveDelegate: is deprecated, use IMLib/IMKit delegate instead.")));
-
-/// 删除某个消息监听Delegate
-/// @param delegate RCMicMessageHandleDelegate
-- (void)removeMessageReceiveDelegate:(id<RCIMClientReceiveMessageDelegate>)delegate __attribute__((deprecated("removeMessageReceiveDelegate: is deprecated, use IMLib/IMKit delegate instead.")));
 
 @end
 
