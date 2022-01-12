@@ -174,6 +174,9 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 /// @param isDisable 是否停止
 - (void)disableAudioRecording:(BOOL)isDisable;
 
+/// 获取麦克风状态
+- (BOOL)isDisableAudioRecording;
+
 /// 设置房间音频质量和场景
 /// @param quality 音频质量
 /// @param scenario 音频场景

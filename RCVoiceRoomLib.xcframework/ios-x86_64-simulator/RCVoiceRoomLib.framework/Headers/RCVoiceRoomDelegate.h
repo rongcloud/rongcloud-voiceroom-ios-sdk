@@ -63,12 +63,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 观众进房回调
 /// @param userId 观众Id
 /// @param memberCount 房间在线人数
-- (void)userDidEnter:(NSString *)userId withUserCount:(NSInteger)count;
+- (void)userDidEnter:(NSString *)userId;
 
 /// 观众退房回调
 /// @param userId 观众Id
 /// @param memberCount 房间在线人数
-- (void)userDidExit:(NSString *)userId withUserCount:(NSInteger)count;
+- (void)userDidExit:(NSString *)userId;
 
 /// 用户麦克风状态变化回调
 /// @param index 麦位序号
@@ -134,12 +134,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param rtt 单位ms
 - (void)networkStatus:(NSInteger)rtt;
 
-/// PK 如果连接成功，会触发此回调，该回调仅会在 PK 连接成功时触发一次
+/// PK 如果连接成功，会触发此回调
 /// @param inviterRoomId 邀请 PK 的用户id
 /// @param inviterUserId 邀请 PK 的用户房间id
 /// @param inviteeRoomId 被邀请 PK 的用户id
 /// @param inviteeUserId 被邀请 PK 的用户房间id
-- (void)pkDidConnectBetweenInviterRoom:(NSString *)inviterRoomId
+- (void)pkOngoingWithInviterRoom:(NSString *)inviterRoomId
                withInviterUserId:(NSString *)inviterUserId
                  withInviteeRoom:(NSString *)inviteeRoomId
                withInviteeUserId:(NSString *)inviteeUserId;
@@ -167,19 +167,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param inviteeRoomId 被邀请者的房间id
 /// @param inviteeUserId 被邀请者的用户id
 - (void)ignorePKInvitationDidReceiveFromRoom:(NSString *)inviteeRoomId byUser:(NSString *)inviteeUserId;
-
-/// 用户麦克风状态变化回调
-/// @param seatIndex 麦位序号
-/// @param isSpeaking 是否正在说话
-- (void)speakingStateDidChange:(NSUInteger)seatIndex speakingState:(BOOL)isSpeaking __attribute__((deprecated("speakingStateDidChange:speakingState: is deprecated, use seatSpeakingStateChanged:atIndex:audioLevel instead.")));
-
-/// 观众进房回调
-/// @param userId 观众Id
-- (void)userDidEnter:(NSString *)userId __attribute__((deprecated("userDidEnter: is deprecated, use userDidEnter:withUserCount instead.")));
-
-/// 观众退房回调
-/// @param userId 观众Id
-- (void)userDidExit:(NSString *)userId __attribute__((deprecated("userDidExit: is deprecated, use userDidExit:withUserCount instead.")));
 
 @end
 

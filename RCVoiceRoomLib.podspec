@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
     s.name         = "RCVoiceRoomLib"
-    s.version      = "2.0.6"
+    s.version      = "2.0.7"
     s.summary      = "Rong Cloud Voice Room Lib."
 
 
