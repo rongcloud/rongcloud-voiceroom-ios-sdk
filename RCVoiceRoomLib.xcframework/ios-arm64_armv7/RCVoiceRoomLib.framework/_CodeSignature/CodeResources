@@ -38,7 +38,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		EMzkp6DknGkvXhTNuHo8djsd5HQ=
+		JjqyIABYkOHlDXza8qYcMBFipE4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -53,6 +53,10 @@
 	<dict>
 		<key>Headers/RCVoicePKInfo.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			8fuV2FIBJ9eXa5lHFPuFbsg0tT4=
+			</data>
 			<key>hash2</key>
 			<data>
 			6x/8bD915N2wOc8jeNi+a0vXoBlUIhzSDRq8wa799Ok=
@@ -60,6 +64,10 @@
 		</dict>
 		<key>Headers/RCVoiceRoomDefine.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			kvRYeBCo55aRuDWgWUDXep5f3lU=
+			</data>
 			<key>hash2</key>
 			<data>
 			rUm6x+wtwBO2enCe+TvI71hIwq2X1hEFZuerSkLgHAE=
@@ -67,6 +75,10 @@
 		</dict>
 		<key>Headers/RCVoiceRoomDelegate.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			7FXackwzJ/r/+LwxNEtd3+P2eE4=
+			</data>
 			<key>hash2</key>
 			<data>
 			+L2iJJ/EB7RNZV8L46xSo9puinP4uYOH6VmMLYSO6Kc=
@@ -74,6 +86,10 @@
 		</dict>
 		<key>Headers/RCVoiceRoomEngine.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			EmhTCVIwy8IaVzpxIJFYJ+E+1ig=
+			</data>
 			<key>hash2</key>
 			<data>
 			G64tRabZucGyDEw8RVnymY0/wDy9FUjoN1BqRjJCU9w=
@@ -81,6 +97,10 @@
 		</dict>
 		<key>Headers/RCVoiceRoomErrorCode.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			PS3o2U32zLzKwR1JmTPmQgqRYd8=
+			</data>
 			<key>hash2</key>
 			<data>
 			N8ZXTvCBrMOJqbsjJ2JF+I1oQJKLTQc6Zk5s0pxSwYc=
@@ -88,6 +108,10 @@
 		</dict>
 		<key>Headers/RCVoiceRoomInfo.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			98OhNvRsyxTfFsu23fIoaVLH39s=
+			</data>
 			<key>hash2</key>
 			<data>
 			crdWcOg3biagP1gFTu/fnVq5GjvZS8qCxgitJmM0kYA=
@@ -95,6 +119,10 @@
 		</dict>
 		<key>Headers/RCVoiceRoomLib.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			z62bJvY6IJ2nc0XcyufGBzeXe2o=
+			</data>
 			<key>hash2</key>
 			<data>
 			sExmnSqpLlXha4JEwvhDB5rkXeGYruiy3e8itQ9jsyA=
@@ -102,6 +130,10 @@
 		</dict>
 		<key>Headers/RCVoiceSeatInfo.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			G23cWL8aLq2CR6nZG7ilxU6arhw=
+			</data>
 			<key>hash2</key>
 			<data>
 			kUrK8dI2mPUhIHCvjrX1dd74m2DYV3JQHH0Tltt16oI=
@@ -109,6 +141,10 @@
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			lW2kUuZOJM1RvsMSaKe3At+rI3o=
+			</data>
 			<key>hash2</key>
 			<data>
 			vmIVmjhriMZT8YZxZV1twse9bYrCRgVgfWQ252ZnxM4=
@@ -116,6 +152,10 @@
 		</dict>
 		<key>RCConfig.plist</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			tLLC4Uyo/ChnXw0e+qQoP2Aq2Rc=
+			</data>
 			<key>hash2</key>
 			<data>
 			vw5hCzMW6KYUbA7UDYMWR4yCSd/1uDX8ljdaiOveDLs=
