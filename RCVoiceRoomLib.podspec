@@ -16,13 +16,13 @@ Pod::Spec.new do |s|
     s.license      = { :type => "Copyright", :text => "Copyright 2021 RongCloud" }
     s.author             = { "zangqilong" => "https://www.rongcloud.cn/" }
     s.social_media_url   = "https://www.rongcloud.cn/"
-    s.platform     = :ios, "9.0"
+    s.platform     = :ios, "11.0"
     s.source           = { :git => 'https://github.com/rongcloud/rongcloud-voiceroom-ios-sdk.git', :tag => s.version.to_s }
     s.requires_arc = true
     s.static_framework = true
     
     s.xcconfig = {
-        'VALID_ARCHS' =>  'arm64 x86_64 armv7',
+        'VALID_ARCHS' =>  'arm64 x86_64',
     }
     
     s.pod_target_xcconfig = {
@@ -36,6 +36,7 @@ Pod::Spec.new do |s|
 
     s.dependency 'RongCloudRTC/RongRTCLib', '~> 5.1.13'
     s.dependency 'RongCloudIM/IMLib', '~> 5.1.6'
+    s.dependency 'RCSceneLog'
 
 end
 
