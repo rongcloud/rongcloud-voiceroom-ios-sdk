@@ -38,7 +38,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		HZ/PRi5PQmGkMpyiWrpVZ+yXfN8=
+		U6Pe8cfnlkGXKP6ZfHO7G4167n0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -47,6 +47,10 @@
 		<key>RCConfig.plist</key>
 		<data>
 		tLLC4Uyo/ChnXw0e+qQoP2Aq2Rc=
+		</data>
+		<key>codes.json</key>
+		<data>
+		S57WYn9L+I2LQyWpc0b20LcZNgs=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -159,6 +163,17 @@
 			<key>hash2</key>
 			<data>
 			vw5hCzMW6KYUbA7UDYMWR4yCSd/1uDX8ljdaiOveDLs=
+			</data>
+		</dict>
+		<key>codes.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			S57WYn9L+I2LQyWpc0b20LcZNgs=
+			</data>
+			<key>hash2</key>
+			<data>
+			SQncHxU/YMCYNwMqjox0L1m3PHSNGtdp7gqZs5OslKY=
 			</data>
 		</dict>
 	</dict>
