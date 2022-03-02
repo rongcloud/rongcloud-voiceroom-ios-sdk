@@ -2,159 +2,175 @@
   "codes": [
     {
       "code": "70000",
-      "desc": "操作成功"
+      "desc": "Success"
     },
     {
       "code": "70001",
-      "desc": "连接服务器失败"
+      "desc": "connect server failed"
     },
     {
       "code": "70002",
-      "desc": "当前麦位小于0或者当前麦位大于麦位总数"
+      "desc": "Seat index not correct"
     },
     {
       "code": "70003",
-      "desc": "当前用户已经上麦"
+      "desc": "Already on seat"
     },
     {
       "code": "70004",
-      "desc": "当前用户不在麦位上"
+      "desc": "User not on seat"
     },
     {
       "code": "70005",
-      "desc": "跳麦所选择的两个麦位不能相同"
+      "desc": "Target seat index can't equal to current index"
     },
     {
       "code": "70006",
-      "desc": "当前麦位不是空置状态"
+      "desc": "Target Seat is locked or using"
     },
     {
       "code": "70007",
-      "desc": "主播不能抱自己上麦"
+      "desc": "Can't pick self on seat"
     },
     {
       "code": "70008",
-      "desc": "抱麦失败"
+      "desc": "Pick user failed"
     },
     {
       "code": "70009",
-      "desc": "不能踢自己下麦"
+      "desc": "Can't kick self"
     },
     {
       "code": "70010",
-      "desc": "加入房间失败"
+      "desc": "Join room failed"
     },
     {
       "code": "70011",
-      "desc": "离开房间失败"
+      "desc": "Leave room failed"
     },
     {
       "code": "70012",
-      "desc": "房间信息获取失败"
+      "desc": "Get room info failed"
     },
     {
       "code": "70013",
-      "desc": "已经在申请列表里面"
+      "desc": "Already request seat"
     },
     {
       "code": "70014",
-      "desc": "排队的人数太多"
+      "desc": "Request seat list is full, the max is 20"
     },
     {
       "code": "70015",
-      "desc": "申请上麦请求失败"
+      "desc": "Request seat failed"
     },
     {
       "code": "70016",
-      "desc": "取消申请上麦请求发送失败"
+      "desc": "Cancel request seat failed"
     },
     {
       "code": "70017",
-      "desc": "同意排麦请求发送失败"
+      "desc": "Accept request seat failed"
     },
     {
       "code": "70018",
-      "desc": "拒绝排麦请求发送失败"
+      "desc": "Reject request seat failed"
     },
     {
       "code": "70019",
-      "desc": "同步麦位信息失败"
+      "desc": "Update seat info failed"
     },
     {
       "code": "70020",
-      "desc": "同步房间信息失败"
+      "desc": "Update room Info failed"
     },
     {
       "code": "70021",
-      "desc": "同步排麦相关信息"
+      "desc": "Update request seat kv failed"
     },
     {
       "code": "70022",
-      "desc": "获取排麦请求列表失败"
+      "desc": "Get request seat list failed"
     },
     {
       "code": "70023",
-      "desc": "发送信息失败"
+      "desc": "Send message failed"
     },
     {
       "code": "70024",
-      "desc": "请求上麦发送失败"
+      "desc": "Invitation failed"
     },
     {
       "code": "70025",
-      "desc": "取消邀请上麦请求发送失败"
+      "desc": "Cancel invitation failed"
     },
     {
       "code": "70026",
-      "desc": "同意申请上麦请求发送失败"
+      "desc": "Accept invitation failed"
     },
     {
       "code": "70027",
-      "desc": "拒绝申请上麦请求发送失败"
+      "desc": "Reject invitation failed"
     },
     {
       "code": "70028",
-      "desc": "创建语聊房失败"
+      "desc": "Create room failed"
     },
     {
       "code": "70029",
-      "desc": "用户ID为空"
+      "desc": "User id is empty"
     },
     {
       "code": "70030",
-      "desc": "获取麦位信息失败"
+      "desc": "Get latest seat info failed"
     },
     {
       "code": "70031",
-      "desc": "开始PK失败"
+      "desc": "Pk begin failed"
     },
     {
       "code": "70032",
-      "desc": "退出PK失败"
+      "desc": "Pk quit failed"
     },
     {
       "code": "70033",
-      "desc": "发送PK邀请失败"
+      "desc": "Pk invitation failed"
     },
     {
       "code": "70034",
-      "desc": "取消PK请求失败"
+      "desc": "Cancel pk invitation failed"
     },
     {
       "code": "70035",
-      "desc": "静音PK对象失败"
+      "desc": "Mute pk user failed"
     },
     {
       "code": "70036",
-      "desc": "创建房间的信息不正确"
+      "desc": "Room name or seat count not empty"
     },
     {
       "code": "70037",
-      "desc": "已经在PK中"
+      "desc": "Already in pk"
     },
     {
       "code": "70038",
-      "desc": "切换角色失败"
+      "desc": "Switch role failed"
+    },
+    {
+      "code": "70039",
+      "desc": "Mute others failed"
+    },
+    {
+      "code": "70040",
+      "desc": "Lock others failed"
+    },
+    {
+      "code": "70041",
+      "desc": "Pk info check failed"
+    },
+    {
+      "code": "70042",
+      "desc": "Get role failed"
     }
   ]
 }
