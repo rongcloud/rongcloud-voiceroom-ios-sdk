@@ -63,7 +63,7 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 /// @param successBlock 离开房间成功
 /// @param errorBlock 离开房间失败
 - (void)leaveRoom:(RCVoiceRoomSuccessBlock)successBlock
-                    error:(RCVoiceRoomErrorBlock)errorBlock;
+            error:(RCVoiceRoomErrorBlock)errorBlock;
 
 /// 用户主动上麦
 /// @param seatIndex 麦位序号

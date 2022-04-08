@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
     s.name         = "RCVoiceRoomLib"
-    s.version      = "2.0.8.2"
+    s.version      = "2.0.8.3"
     s.summary      = "Rong Cloud Voice Room Lib."
 
 
@@ -18,23 +18,16 @@ Pod::Spec.new do |s|
     s.platform     = :ios, "11.0"
     s.source           = { :git => 'https://github.com/rongcloud/rongcloud-voiceroom-ios-sdk.git', :tag => s.version.to_s }
     s.requires_arc = true
-    s.static_framework = true
-    
-    s.xcconfig = {
-        'VALID_ARCHS' =>  'arm64 x86_64',
-    }
     
     s.pod_target_xcconfig = {
-        'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
-    }
-    s.user_target_xcconfig = {
-        'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+        'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
+        'VALID_ARCHS' =>  'arm64 x86_64',
     }
 
     s.vendored_frameworks = 'RCVoiceRoomLib.xcframework'
 
-    s.dependency 'RongCloudRTC/RongRTCLib', '~> 5.1.15'
-    s.dependency 'RongCloudIM/IMLib', '~> 5.1.7.1'
+    s.dependency 'RongCloudRTC/RongRTCLib'
+    s.dependency 'RongCloudIM/IMLib'
     s.dependency 'RCSceneLog'
 
 end
