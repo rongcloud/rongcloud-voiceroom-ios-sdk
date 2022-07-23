@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
     
     s.pod_target_xcconfig = {
         'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
-        'VALID_ARCHS' =>  'arm64 x86_64 armv7s',
+        'VALID_ARCHS' =>  'arm64 armv7 x86_64',
     }
 
     s.vendored_frameworks = 'RCVoiceRoomLib.xcframework'
