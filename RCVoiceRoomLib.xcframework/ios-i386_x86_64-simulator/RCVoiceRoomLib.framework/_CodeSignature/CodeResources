@@ -14,15 +14,19 @@
 		</data>
 		<key>Headers/RCVoiceRoomDelegate.h</key>
 		<data>
-		7FXackwzJ/r/+LwxNEtd3+P2eE4=
+		tMvxeqM+n7t1uc/IkYXZMfGKkUo=
 		</data>
 		<key>Headers/RCVoiceRoomEngine.h</key>
 		<data>
 		ucc2xEDlsWA5zYPjxp8R1EZgFxM=
 		</data>
+		<key>Headers/RCVoiceRoomError.h</key>
+		<data>
+		C+h7LPpJU7tL2ol0jnCFWamuw8s=
+		</data>
 		<key>Headers/RCVoiceRoomErrorCode.h</key>
 		<data>
-		PS3o2U32zLzKwR1JmTPmQgqRYd8=
+		N/f13pOCKDC3V3YBPyCzGOK+zYg=
 		</data>
 		<key>Headers/RCVoiceRoomInfo.h</key>
 		<data>
@@ -30,7 +34,7 @@
 		</data>
 		<key>Headers/RCVoiceRoomLib.h</key>
 		<data>
-		z62bJvY6IJ2nc0XcyufGBzeXe2o=
+		uw5oqPVfxB8QWfQt1Kv8j/GmkWM=
 		</data>
 		<key>Headers/RCVoiceSeatInfo.h</key>
 		<data>
@@ -38,7 +42,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		2xOfMgG21J3INhU7Husw6tSZ7Gs=
+		0wRPjCp+LvYMcqqX5CRcfTfxs7s=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -50,7 +54,7 @@
 		</data>
 		<key>codes.json</key>
 		<data>
-		zWzbu/x+E/5h/+02woA6dKExp3M=
+		p/hMTM1gYyaXyAAYd0Edn0PncTg=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -81,11 +85,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7FXackwzJ/r/+LwxNEtd3+P2eE4=
+			tMvxeqM+n7t1uc/IkYXZMfGKkUo=
 			</data>
 			<key>hash2</key>
 			<data>
-			+L2iJJ/EB7RNZV8L46xSo9puinP4uYOH6VmMLYSO6Kc=
+			5Mdjl2253ge60d9jhN/in9dFLhvEHWTVNP3TGRdZMqc=
 			</data>
 		</dict>
 		<key>Headers/RCVoiceRoomEngine.h</key>
@@ -99,15 +103,26 @@
 			Q1pyAW8EXr3lapF5vkjK58Uk+KB2/wWkvlW/X0dk75M=
 			</data>
 		</dict>
+		<key>Headers/RCVoiceRoomError.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			C+h7LPpJU7tL2ol0jnCFWamuw8s=
+			</data>
+			<key>hash2</key>
+			<data>
+			xc/sHeZ2YLzN3THUFQ0PhKELSEZFc90GXXcDF5K5nrk=
+			</data>
+		</dict>
 		<key>Headers/RCVoiceRoomErrorCode.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PS3o2U32zLzKwR1JmTPmQgqRYd8=
+			N/f13pOCKDC3V3YBPyCzGOK+zYg=
 			</data>
 			<key>hash2</key>
 			<data>
-			N8ZXTvCBrMOJqbsjJ2JF+I1oQJKLTQc6Zk5s0pxSwYc=
+			DN3DEC3tyUltEHwge6V3Senk1ZdWG5nJ81YbemeYuG0=
 			</data>
 		</dict>
 		<key>Headers/RCVoiceRoomInfo.h</key>
@@ -125,11 +140,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			z62bJvY6IJ2nc0XcyufGBzeXe2o=
+			uw5oqPVfxB8QWfQt1Kv8j/GmkWM=
 			</data>
 			<key>hash2</key>
 			<data>
-			sExmnSqpLlXha4JEwvhDB5rkXeGYruiy3e8itQ9jsyA=
+			eH2ACWauBAudB3woBkCAhyVE1h24lX+CqFOAZr3FEMs=
 			</data>
 		</dict>
 		<key>Headers/RCVoiceSeatInfo.h</key>
@@ -169,11 +184,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zWzbu/x+E/5h/+02woA6dKExp3M=
+			p/hMTM1gYyaXyAAYd0Edn0PncTg=
 			</data>
 			<key>hash2</key>
 			<data>
-			0LB9mp5W+UnATuxiYcJcJrEs3JuGwJIh3bn+AwgS5UE=
+			B3/T4lekwA3ARR92LX19pHEuWWzA8uNtn5COC8mJ6Sw=
 			</data>
 		</dict>
 	</dict>

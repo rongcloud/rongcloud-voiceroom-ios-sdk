@@ -9,6 +9,7 @@
 #import "RCVoiceRoomInfo.h"
 #import "RCVoiceSeatInfo.h"
 #import "RCVoiceRoomErrorCode.h"
+#import "RCVoiceRoomError.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,7 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)roomKVDidReady;
 
 /// 房间发生异常问题
-- (void)roomDidOccurError:(RCVoiceRoomErrorCode)code;
+- (void)roomDidOccurError:(RCVoiceRoomErrorCode)code __attribute__((deprecated("请使用使用roomDidOccurErrorWithDetails方法")));
+
+/// 房间发生异常问题
+/// @param error  错误的详细信息
+- (void)roomDidOccurErrorWithDetails:(id<RCVoiceRoomError>)error;
 
 /// 房间信息变更回调
 /// 第一次加入房间时也会触发回调
@@ -62,18 +67,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 观众进房回调
 /// @param userId 观众Id
-/// @param memberCount 房间在线人数
 - (void)userDidEnter:(NSString *)userId;
 
 /// 观众退房回调
 /// @param userId 观众Id
-/// @param memberCount 房间在线人数
 - (void)userDidExit:(NSString *)userId;
 
 /// 用户麦克风状态变化回调
 /// @param index 麦位序号
 /// @param speaking 是否正在说话
-/// @param audioLevel 音量值
+/// @param level 音量值
 - (void)seatSpeakingStateChanged:(BOOL)speaking
                          atIndex:(NSInteger)index
                       audioLevel:(NSInteger)level;
