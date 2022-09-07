@@ -5,8 +5,11 @@
 //  Created by 叶孤城 on 2021/5/26.
 //
 
+#import <Foundation/Foundation.h>
+
 #ifndef RCVoiceRoomErrorCode_h
 #define RCVoiceRoomErrorCode_h
+
 typedef NS_ENUM(NSInteger, RCVoiceRoomErrorCode) {
     /// 未知错误
     RCVoiceRoomUnknownError = -1,

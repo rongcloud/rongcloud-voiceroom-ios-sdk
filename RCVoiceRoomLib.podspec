@@ -1,11 +1,9 @@
 
 Pod::Spec.new do |s|
 
-
     s.name         = "RCVoiceRoomLib"
-    s.version      = "2.0.9.1"
+    s.version      = "2.1.0"
     s.summary      = "Rong Cloud Voice Room Lib."
-
 
     s.description  = <<-DESC
                         Rong Cloud Voice Room Lib for iOS.
@@ -27,8 +25,7 @@ Pod::Spec.new do |s|
     s.vendored_frameworks = 'RCVoiceRoomLib.xcframework'
 
     s.dependency 'RongCloudRTC/RongRTCLib'
-    s.dependency 'RongCloudIM/IMLib'
-    s.dependency 'RCSceneLog'
+    s.dependency 'RongCloudIM/ChatRoom'
 
 end
 
