@@ -73,13 +73,22 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param userId 观众Id
 - (void)userDidExit:(NSString *)userId;
 
-/// 用户麦克风状态变化回调
-/// @param index 麦位序号
+/// 麦位麦克风状态变化回调
 /// @param speaking 是否正在说话
+/// @param index 麦位序号
 /// @param level 音量值
 - (void)seatSpeakingStateChanged:(BOOL)speaking
                          atIndex:(NSInteger)index
                       audioLevel:(NSInteger)level;
+
+/// 用户麦克风状态变化回调
+/// @param speaking 是否正在说话
+/// @param userId 上麦用户Id
+/// @param level 音量值
+- (void)userSpeakingStateChanged:(BOOL)speaking
+                          userId:(NSString *)userId
+                      audioLevel:(NSInteger)level;
+
 
 /// 收取信息回调
 /// @param message 收到的消息

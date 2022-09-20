@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/RCVoiceRoomDelegate.h</key>
 		<data>
-		tMvxeqM+n7t1uc/IkYXZMfGKkUo=
+		9wDxVoNKnXycx+0FcVDZH1pZPGY=
 		</data>
 		<key>Headers/RCVoiceRoomEngine.h</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		wt2YgdsmAtFpVoaskYLMumYEpYM=
+		1QYnvPu0y4qVRuvF/VhxFtc2acY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -51,6 +51,14 @@
 		<key>RCConfig.plist</key>
 		<data>
 		tLLC4Uyo/ChnXw0e+qQoP2Aq2Rc=
+		</data>
+		<key>RongRTCLib.bundle/HwAiVadModel.bin</key>
+		<data>
+		ATcRMel9IwX111oJWJbEEm8fxLw=
+		</data>
+		<key>RongRTCLib.bundle/HwAinrModel.bin</key>
+		<data>
+		B8kB+UwS+Djpk42nGs6PsuZb4i4=
 		</data>
 		<key>codes.json</key>
 		<data>
@@ -85,11 +93,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tMvxeqM+n7t1uc/IkYXZMfGKkUo=
+			9wDxVoNKnXycx+0FcVDZH1pZPGY=
 			</data>
 			<key>hash2</key>
 			<data>
-			5Mdjl2253ge60d9jhN/in9dFLhvEHWTVNP3TGRdZMqc=
+			Li1/ENWEuscOZcO5GeyWzCwTaI+y5HApnYl5pSK4wRg=
 			</data>
 		</dict>
 		<key>Headers/RCVoiceRoomEngine.h</key>
@@ -178,6 +186,28 @@
 			<key>hash2</key>
 			<data>
 			vw5hCzMW6KYUbA7UDYMWR4yCSd/1uDX8ljdaiOveDLs=
+			</data>
+		</dict>
+		<key>RongRTCLib.bundle/HwAiVadModel.bin</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ATcRMel9IwX111oJWJbEEm8fxLw=
+			</data>
+			<key>hash2</key>
+			<data>
+			rI/0N8nw9Ktvh3flHD50aM1unvKAoT4PXCZogPS4lzo=
+			</data>
+		</dict>
+		<key>RongRTCLib.bundle/HwAinrModel.bin</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			B8kB+UwS+Djpk42nGs6PsuZb4i4=
+			</data>
+			<key>hash2</key>
+			<data>
+			wWEpSmpBqk1A1pnvwExjRDLmRm4kLI6s07dug5+9ftg=
 			</data>
 		</dict>
 		<key>codes.json</key>
