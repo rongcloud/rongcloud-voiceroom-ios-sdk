@@ -52,14 +52,6 @@
 		<data>
 		tLLC4Uyo/ChnXw0e+qQoP2Aq2Rc=
 		</data>
-		<key>RongRTCLib.bundle/HwAiVadModel.bin</key>
-		<data>
-		ATcRMel9IwX111oJWJbEEm8fxLw=
-		</data>
-		<key>RongRTCLib.bundle/HwAinrModel.bin</key>
-		<data>
-		B8kB+UwS+Djpk42nGs6PsuZb4i4=
-		</data>
 		<key>codes.json</key>
 		<data>
 		p/hMTM1gYyaXyAAYd0Edn0PncTg=
@@ -186,28 +178,6 @@
 			<key>hash2</key>
 			<data>
 			vw5hCzMW6KYUbA7UDYMWR4yCSd/1uDX8ljdaiOveDLs=
-			</data>
-		</dict>
-		<key>RongRTCLib.bundle/HwAiVadModel.bin</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ATcRMel9IwX111oJWJbEEm8fxLw=
-			</data>
-			<key>hash2</key>
-			<data>
-			rI/0N8nw9Ktvh3flHD50aM1unvKAoT4PXCZogPS4lzo=
-			</data>
-		</dict>
-		<key>RongRTCLib.bundle/HwAinrModel.bin</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			B8kB+UwS+Djpk42nGs6PsuZb4i4=
-			</data>
-			<key>hash2</key>
-			<data>
-			wWEpSmpBqk1A1pnvwExjRDLmRm4kLI6s07dug5+9ftg=
 			</data>
 		</dict>
 		<key>codes.json</key>
