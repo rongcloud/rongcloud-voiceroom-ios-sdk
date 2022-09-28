@@ -1,31 +1,31 @@
 
 Pod::Spec.new do |s|
+  s.name             = 'RCVoiceRoomLib'
+  s.version          = '2.1.1'
+  s.summary          = 'Voice Room by RC IM & RTC'
 
-    s.name         = "RCVoiceRoomLib"
-    s.version      = "2.1.0.2"
-    s.summary      = "Rong Cloud Voice Room Lib."
+  s.description      = "Voice Room by RC IM & RTC @scene SDK"
 
-    s.description  = <<-DESC
-                        Rong Cloud Voice Room Lib for iOS.
-                        DESC
+  s.homepage         = 'https://github.com/rongcloud/RCVoiceRoomLib'
+  s.author           = { 'shaoshuai' => 'shaoshuai@rongcloud.cn' }
+  s.source           = { :git => 'https://github.com/rongcloud/RCVoiceRoomLib.git', :tag => s.version.to_s }
 
-    s.homepage     = "https://www.rongcloud.cn/"
-    s.license      = { :type => "Copyright", :text => "Copyright 2021 RongCloud" }
-    s.author             = { "zangqilong" => "https://www.rongcloud.cn/" }
-    s.social_media_url   = "https://www.rongcloud.cn/"
-    s.platform     = :ios, "9.0"
-    s.source           = { :git => 'https://github.com/rongcloud/rongcloud-voiceroom-ios-sdk.git', :tag => s.version.to_s }
-    s.requires_arc = true
-    
-    s.pod_target_xcconfig = {
-        'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
-        'VALID_ARCHS' =>  'arm64 armv7 x86_64',
-    }
+  s.ios.deployment_target = '11.0'
+  
+  s.pod_target_xcconfig = {
+    'VALID_ARCHS' => 'arm64 x86_64',
+    'ENABLE_BITCODE' => 'NO'
+  }
 
-    s.vendored_frameworks = 'RCVoiceRoomLib.xcframework'
+  s.source_files = 'RCVoiceRoomLib/Source/Classes/**/*'
+  
+  s.resource_bundles = {
+    'RCVoiceRoomLib' => ['RCVoiceRoomLib/Source/Assets/*']
+  }
 
-    s.dependency 'RongCloudRTC/RongRTCLib'
-    s.dependency 'RongCloudIM/ChatRoom'
-
+  s.public_header_files = 'Pod/Classes/Header/RCVoiceRoomLib.h'
+  
+  s.dependency 'RongCloudRTC/RongRTCLib'
+  s.dependency 'RongCloudIM/ChatRoom'
+  
 end
-

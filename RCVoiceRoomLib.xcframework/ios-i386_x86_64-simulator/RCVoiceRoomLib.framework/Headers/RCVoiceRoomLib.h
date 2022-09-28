@@ -17,3 +17,4 @@ FOUNDATION_EXPORT const unsigned char RCVoiceRoomLibVersionString[];
 #import <RCVoiceRoomLib/RCVoiceRoomInfo.h>
 #import <RCVoiceRoomLib/RCVoicePKInfo.h>
 #import <RCVoiceRoomLib/RCVoiceRoomError.h>
+#import <RCVoiceRoomLib/RCVoiceRoomEngine+Plugin.h>>

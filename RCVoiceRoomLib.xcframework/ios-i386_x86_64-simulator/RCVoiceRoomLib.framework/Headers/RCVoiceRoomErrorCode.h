@@ -90,8 +90,9 @@ typedef NS_ENUM(NSInteger, RCVoiceRoomErrorCode) {
     /// 已经在PK中
     RCVoiceRoomAlreadyInPK = 70037,
     /// 切换角色失败
-    RCVoiceRoomSwitchRoleFailed = 70038
-    /// 切换角色失败
+    RCVoiceRoomSwitchRoleFailed = 70038,
+    /// 更新麦位信息失败
+    RCVoiceRoomUpdateSeatInfoFailed = 70039
 };
 
 #endif /* RCVoiceRoomErrorCode_h */
