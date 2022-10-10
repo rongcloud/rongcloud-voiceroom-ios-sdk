@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 typedef void(^RCVoiceRoomSuccessBlock)(void);
+typedef void(^RCSVoiceClearCompletion)(NSArray<NSString *> *clearKeys);
 typedef void(^RCVoiceRoomErrorBlock)(RCVoiceRoomErrorCode code, NSString *msg);
 
 /// PK回复类别
@@ -34,6 +35,8 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 /// 设置语聊房的Delegate
 /// @param delegate 语聊房delegate
 - (void)setDelegate:(id<RCVoiceRoomDelegate>)delegate;
+
+- (void)setSeatPlaceHolderStateEnable:(BOOL)seatPlaceHolderStateEnable;
 
 @end
 
@@ -121,6 +124,12 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 - (void)kickUserFromSeat:(NSString *)userId
                  success:(RCVoiceRoomSuccessBlock)successBlock
                    error:(RCVoiceRoomErrorBlock)errorBlock;
+
+/// 清理麦位锁状态
+/// @param clearCompletion 成功回调
+/// @param errorBlock 失败回调
+- (void)clearSeatState:(RCSVoiceClearCompletion)clearCompletion
+                 error:(RCVoiceRoomErrorBlock)errorBlock;
 
 /// 将某个用户踢出房间
 /// @param userId 踢出房间的userId
