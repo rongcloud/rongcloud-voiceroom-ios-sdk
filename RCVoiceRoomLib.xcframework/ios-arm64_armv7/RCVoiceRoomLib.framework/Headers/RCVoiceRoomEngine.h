@@ -36,6 +36,8 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 /// @param delegate 语聊房delegate
 - (void)setDelegate:(id<RCVoiceRoomDelegate>)delegate;
 
+/// 是否开启麦位锁定，用户防止多用户抢麦
+/// @param seatPlaceHolderStateEnable 是开启
 - (void)setSeatPlaceHolderStateEnable:(BOOL)seatPlaceHolderStateEnable;
 
 @end
