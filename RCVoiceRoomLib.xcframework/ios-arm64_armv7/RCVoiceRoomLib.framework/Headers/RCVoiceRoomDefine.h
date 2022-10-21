@@ -41,4 +41,11 @@ typedef NS_ENUM(NSUInteger, RCVoiceRoomAudioScenario) {
     RCVoiceRoomAudioScenarioMusicClassRoom,
 };
 
+/// PK回复类别
+typedef NS_ENUM(NSUInteger, RCPKResponseType) {
+    RCPKResponseAgree = 0, // 同意
+    RCPKResponseReject = 1, // 拒绝
+    RCPKResponseIgnore = 2 // 忽略
+};
+
 #endif /* RCVoiceRoomDefine_h */

@@ -12,10 +12,13 @@ FOUNDATION_EXPORT double RCVoiceRoomLibVersionNumber;
 FOUNDATION_EXPORT const unsigned char RCVoiceRoomLibVersionString[];
 
 #import <RCVoiceRoomLib/RCVoiceRoomEngine.h>
-#import <RCVoiceRoomLib/RCVoiceRoomDelegate.h>
-#import <RCVoiceRoomLib/RCVoiceSeatInfo.h>
-#import <RCVoiceRoomLib/RCVoiceRoomInfo.h>
-#import <RCVoiceRoomLib/RCVoicePKInfo.h>
-#import <RCVoiceRoomLib/RCVoiceRoomError.h>
-
 #import <RCVoiceRoomLib/RCVoiceRoomEngine+Plugin.h>
+#import <RCVoiceRoomLib/RCVoiceRoomEngine+DP_2_1_X.h>
+
+#import <RCVoiceRoomLib/RCVoiceRoomInfo.h>
+#import <RCVoiceRoomLib/RCVoiceSeatInfo.h>
+#import <RCVoiceRoomLib/RCSAudioLevel.h>
+#import <RCVoiceRoomLib/RCVoicePKInfo.h>
+
+#import <RCVoiceRoomLib/RCVoiceRoomDelegate.h>
+#import <RCVoiceRoomLib/RCVoiceRoomError.h>

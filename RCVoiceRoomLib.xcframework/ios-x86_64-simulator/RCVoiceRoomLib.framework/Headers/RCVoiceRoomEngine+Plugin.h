@@ -46,8 +46,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 用户跳麦，在用户已经在麦位想切换麦位时调用
 /// @param seatIndex 需要跳转的麦位序号
-/// @param switchMute 跳麦携带mute，被携带后的麦位mute会被置为false； false: 不携带mute
-/// @param switchExtra 跳麦携带extra，被携带后的麦位extra会被置为null； false: 不携带extra
+/// @param switchMute YES：跳麦后会把旧麦位信息的 mute 值赋给新麦位，同时旧麦位信息的 mute 置为 NO； NO: 不转移赋值
+/// @param switchExtra switchExtra 跳麦后会把旧麦位信息的 extra 值赋给新麦位，同时旧麦位信息的 extra 置为null； NO: 不转移赋值
 /// @param successBlock 跳麦成功
 /// @param errorBlock 跳麦失败
 - (void)switchSeatTo:(NSUInteger)seatIndex

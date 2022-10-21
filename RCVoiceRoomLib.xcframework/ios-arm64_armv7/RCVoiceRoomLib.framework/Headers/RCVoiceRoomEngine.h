@@ -7,25 +7,16 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RCVoiceRoomErrorCode.h"
-#import "RCVoiceRoomDefine.h"
+#import <RCVoiceRoomLib/RCVoiceRoomErrorCode.h>
+#import <RCVoiceRoomLib/RCVoiceRoomDefine.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class RCVoiceRoomInfo, RCMessageContent, RCVoiceSeatInfo, RCVoicePKInfo;
-@protocol RCVoiceRoomDelegate, RCIMClientReceiveMessageDelegate;
-
-
 typedef void(^RCVoiceRoomSuccessBlock)(void);
-typedef void(^RCSVoiceClearCompletion)(NSArray<NSString *> *clearKeys);
+typedef void(^RCSVoiceClearCompletion)(NSArray<NSString *> * __nullable clearKeys);
 typedef void(^RCVoiceRoomErrorBlock)(RCVoiceRoomErrorCode code, NSString *msg);
 
-/// PK回复类别
-typedef NS_ENUM(NSUInteger, RCPKResponseType) {
-    RCPKResponseAgree = 0,
-    RCPKResponseReject = 1,
-    RCPKResponseIgnore = 2
-};
+@protocol RCVoiceRoomDelegate;
 
 @interface RCVoiceRoomEngine : NSObject
 
@@ -36,11 +27,13 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 /// @param delegate 语聊房delegate
 - (void)setDelegate:(id<RCVoiceRoomDelegate>)delegate;
 
-/// 是否开启麦位锁定，用户防止多用户抢麦
-/// @param seatPlaceHolderStateEnable 是开启
-- (void)setSeatPlaceHolderStateEnable:(BOOL)seatPlaceHolderStateEnable;
+/// 是否开启上麦占位功能
+/// @param enable 是否开启，默认 NO
+- (void)setSeatPlaceHolderStateEnable:(BOOL)enable;
 
 @end
+
+@class RCVoiceRoomInfo;
 
 @interface RCVoiceRoomEngine (Room)
 
@@ -68,6 +61,14 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 - (void)leaveRoom:(RCVoiceRoomSuccessBlock)successBlock
             error:(RCVoiceRoomErrorBlock)errorBlock;
 
+/// 将某个用户踢出房间
+/// @param userId 踢出房间的userId
+/// @param successBlock 成功回调
+/// @param errorBlock 失败回调
+- (void)kickUserFromRoom:(NSString *)userId
+                 success:(RCVoiceRoomSuccessBlock)successBlock
+                   error:(RCVoiceRoomErrorBlock)errorBlock;
+
 /// 设置房间信息，房间的id必须与当前房间id一致
 /// @param roomInfo 修改的房间信息
 /// @param successBlock 设置成功
@@ -80,6 +81,8 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 - (nullable NSString *)roomId;
 
 @end
+
+@class RCVoiceSeatInfo;
 
 @interface RCVoiceRoomEngine (Seat)
 
@@ -132,14 +135,6 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 /// @param errorBlock 失败回调
 - (void)clearSeatState:(RCSVoiceClearCompletion)clearCompletion
                  error:(RCVoiceRoomErrorBlock)errorBlock;
-
-/// 将某个用户踢出房间
-/// @param userId 踢出房间的userId
-/// @param successBlock 成功回调
-/// @param errorBlock 失败回调
-- (void)kickUserFromRoom:(NSString *)userId
-                 success:(RCVoiceRoomSuccessBlock)successBlock
-                   error:(RCVoiceRoomErrorBlock)errorBlock;
 
 /// 锁定某个麦位，如果该麦位有人，会将用户强制下麦
 /// @param seatIndex 麦位序号
@@ -272,6 +267,8 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 
 @end
 
+@class RCVoicePKInfo;
+
 @interface RCVoiceRoomEngine (PK)
 
 /// 发送PK邀请
@@ -330,21 +327,22 @@ typedef NS_ENUM(NSUInteger, RCPKResponseType) {
 
 @end
 
-@interface RCVoiceRoomEngine (Analysis)
+@class RCSMicrophoneState;
 
-+ (NSString *)getVersion;
+@interface RCVoiceRoomEngine (Audio)
+
+/// 当前房间所有主播的麦克风状态
+- (NSArray<RCSMicrophoneState *> *)microphoneStates;
+
+/// 主播设置是否开启 PK 用户声音音量同步
+/// @param enable 是否开启，默认为 NO
+- (void)enablePKUserAudioLevel:(BOOL)enable;
 
 @end
 
-@interface RCVoiceRoomEngine (Deprecated)
+@interface RCVoiceRoomEngine (Analysis)
 
-/// 发送信息
-/// @param message 融云消息实体
-/// @param successBlock 发送成功
-/// @param errorBlock 发送失败
-- (void)sendMessage: (RCMessageContent *)message
-            success:(RCVoiceRoomSuccessBlock)successBlock
-              error:(RCVoiceRoomErrorBlock)errorBlock DEPRECATED_MSG_ATTRIBUTE("use IMLib/IMKit sendMessage instead");
++ (NSString *)getVersion;
 
 @end
 

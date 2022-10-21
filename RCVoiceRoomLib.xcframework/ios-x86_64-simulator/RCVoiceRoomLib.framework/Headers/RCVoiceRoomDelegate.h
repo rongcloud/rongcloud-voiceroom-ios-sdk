@@ -6,24 +6,22 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RCVoiceRoomInfo.h"
-#import "RCVoiceSeatInfo.h"
-#import "RCVoiceRoomErrorCode.h"
-#import "RCVoiceRoomError.h"
+
+#import <RCVoiceRoomLib/RCVoiceRoomErrorCode.h>
+#import <RCVoiceRoomLib/RCVoiceRoomDelegate_DP_2_1_X.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class RCMessage;
+@class RCVoiceRoomInfo;
 
-@protocol RCVoiceRoomDelegate <NSObject>
+@protocol RCVoiceRoomError;
+
+@protocol RCSRoomDelegate <RCVoiceRoomDelegate_DP_2_1_X>
 
 @optional
 
 /// 房间的信息和麦位信息初始化完成回调，用户可在此执行关于房间的其他初始化操作
 - (void)roomKVDidReady;
-
-/// 房间发生异常问题
-- (void)roomDidOccurError:(RCVoiceRoomErrorCode)code __attribute__((deprecated("请使用使用roomDidOccurErrorWithDetails方法")));
 
 /// 房间发生异常问题
 /// @param error  错误的详细信息
@@ -36,6 +34,53 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 房间已关闭
 - (void)roomDidClosed;
+
+/// 观众进房回调
+/// @param userId 观众Id
+- (void)userDidEnter:(NSString *)userId;
+
+/// 观众退房回调
+/// @param userId 观众Id
+- (void)userDidExit:(NSString *)userId;
+
+/// 用户被踢出房间的回调
+/// @param targetId 被踢出房间的用户id
+/// @param userId 执行踢某人出房间的用户id
+- (void)userDidKickFromRoom:(NSString *)targetId byUserId:(NSString *)userId;
+
+/// 收到房间通知
+/// @param name 通知的名称
+/// @param content 通知的内容
+- (void)roomNotificationDidReceive:(NSString *)name
+                           content:(NSString *)content;
+
+@end
+
+@class RCSMicrophoneState, RCSAudioLevel;
+
+@protocol RCSStateDelegate <NSObject>
+
+@optional
+
+/// ˙主播的麦克风状态更新
+/// @param state 状态信息
+- (void)microphoneStateDidChange:(RCSMicrophoneState *)state;
+
+/// 麦位上的部分或全部主播声音音量发生变化
+/// @param levels 音量信息
+- (void)audioLevelDidChange:(NSArray<RCSAudioLevel *> *)levels;
+
+/// 客户端和媒体服务器之间的往返时间
+/// @param rtt 单位 ms
+- (void)networkStatus:(NSInteger)rtt;
+
+@end
+
+@class RCVoiceSeatInfo;
+
+@protocol RCSSeatDelegate <NSObject>
+
+@optional
 
 /// 房间座位变更回调，包括自身上麦或下麦也会触发此回调
 /// @param seatInfolist 座位列表信息
@@ -64,42 +109,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param isLock 是否关闭
 - (void)seatDidLock:(NSInteger)index
             isLock:(BOOL)isLock;
-
-/// 观众进房回调
-/// @param userId 观众Id
-- (void)userDidEnter:(NSString *)userId;
-
-/// 观众退房回调
-/// @param userId 观众Id
-- (void)userDidExit:(NSString *)userId;
-
-/// 麦位麦克风状态变化回调
-/// @param speaking 是否正在说话
-/// @param index 麦位序号
-/// @param level 音量值
-- (void)seatSpeakingStateChanged:(BOOL)speaking
-                         atIndex:(NSInteger)index
-                      audioLevel:(NSInteger)level;
-
-/// 用户麦克风状态变化回调
-/// @param speaking 是否正在说话
-/// @param userId 上麦用户Id
-/// @param level 音量值
-- (void)userSpeakingStateChanged:(BOOL)speaking
-                          userId:(NSString *)userId
-                      audioLevel:(NSInteger)level;
-
-
-/// 收取信息回调
-/// @param message 收到的消息
-- (void)messageDidReceive:(RCMessage *)message;
-
-
-/// 收到房间通知
-/// @param name 通知的名称
-/// @param content 通知的内容
-- (void)roomNotificationDidReceive:(NSString *)name
-                           content:(NSString *)content;
 
 /// 收到自己被抱上麦的请求
 - (void)pickSeatDidReceiveBy:(NSString *)userId;
@@ -136,15 +145,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param invitationId 邀请Id
 - (void)invitationDidCancel:(NSString *)invitationId;
 
-/// 用户被踢出房间的回调
-/// @param targetId 被踢出房间的用户id
-/// @param userId 执行踢某人出房间的用户id
-- (void)userDidKickFromRoom:(NSString *)targetId byUserId:(NSString *)userId;
+@end
 
+@protocol RCSPKDelegate <NSObject>
 
-/// 网络延迟
-/// @param rtt 单位ms
-- (void)networkStatus:(NSInteger)rtt;
+@optional
 
 /// PK 如果连接成功，会触发此回调
 /// @param inviterRoomId 邀请 PK 的用户id
@@ -172,13 +177,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 被邀请者拒绝 PK 邀请回调
 /// @param inviteeRoomId 被邀请者的房间id
-/// @param initeeUserId 被邀请者的用户id
-- (void)rejectPKInvitationDidReceiveFromRoom:(NSString *)inviteeRoomId byUser:(NSString *)initeeUserId;
+/// @param inviteeUserId 被邀请者的用户id
+- (void)rejectPKInvitationDidReceiveFromRoom:(NSString *)inviteeRoomId byUser:(NSString *)inviteeUserId;
 
 /// 邀请者忽略 PK 邀请回调
 /// @param inviteeRoomId 被邀请者的房间id
 /// @param inviteeUserId 被邀请者的用户id
 - (void)ignorePKInvitationDidReceiveFromRoom:(NSString *)inviteeRoomId byUser:(NSString *)inviteeUserId;
+
+@end
+
+@protocol RCVoiceRoomDelegate <RCSRoomDelegate, RCSStateDelegate, RCSSeatDelegate, RCSPKDelegate>
 
 @end
 
